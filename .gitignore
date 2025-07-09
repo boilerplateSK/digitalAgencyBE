@@ -1,0 +1,85 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django migrations
+**/migrations/
+!*/migrations/__init__.py
+
+# SQLite database
+*.sqlite3
+
+# Environment
+.env
+.env.*
+
+# Virtualenv
+venv/
+env/
+ENV/
+.venv/
+.pip-selfcheck.json
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Logs
+*.log
+
+# Static files
+/staticfiles/
+/static/
+
+# Media files
+/media/
+
+# Coverage reports
+htmlcov/
+.coverage
+.tox/
+.nox/
+
+# mypy
+.mypy_cache/
+
+# pytest
+.pytest_cache/
+
+# celery
+celerybeat-schedule
+celerybeat.pid
+
+# Build
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Compiled files
+*.so
+
+# Docker
+*.pid
