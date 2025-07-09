@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -179,3 +180,15 @@ ADMIN_EMAIL = os.environ.get('ADMIN_EMAIL', 'admin@yoursite.com')
 #         'LOCATION': 'redis://127.0.0.1:6379/1',
 #     }
 # }
+
+
+
+# CORS settings for frontend integration
+CORS_ALLOW_ALL_ORIGINS = True  # Only for development
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",  # React dev server
+    "http://127.0.0.1:3000",
+    "https://yourdomain.com",  # Production frontend
+]
+
+CORS_ALLOW_CREDENTIALS = True
