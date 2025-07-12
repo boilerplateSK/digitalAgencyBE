@@ -56,10 +56,10 @@ class ContactSubmissionCreateSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("Name must be at least 2 characters long.")
         return value.strip()
     
-    def validate_message(self, value):
-        if len(value.strip()) < 10:
-            raise serializers.ValidationError("Message must be at least 10 characters long.")
-        return value.strip()
+    # def validate_message(self, value):
+    #     if len(value.strip()) < 10:
+    #         raise serializers.ValidationError("Message must be at least 10 characters long.")
+    #     return value.strip()
 
     def create(self, validated_data):
         # Add IP address and user agent from request context

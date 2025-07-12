@@ -89,7 +89,7 @@ class ContactSubmissionCreateView(generics.CreateAPIView):
         contact_submission = serializer.save()
         
         # Send email notification (optional)
-        self.send_notification_email(contact_submission)
+        # self.send_notification_email(contact_submission)
         
         return Response(
             {
@@ -99,32 +99,32 @@ class ContactSubmissionCreateView(generics.CreateAPIView):
             status=status.HTTP_201_CREATED
         )
     
-    def send_notification_email(self, contact_submission):
-        """Send email notification to admin"""
-        try:
-            subject = f"New Contact Form Submission from {contact_submission.name}"
-            message = f"""
-            New contact form submission received:
+    # def send_notification_email(self, contact_submission):
+    #     """Send email notification to admin"""
+    #     try:
+    #         subject = f"New Contact Form Submission from {contact_submission.name}"
+    #         message = f"""
+    #         New contact form submission received:
             
-            Name: {contact_submission.name}
-            Email: {contact_submission.email}
-            Phone: {contact_submission.phone}
-            Message: {contact_submission.message}
+    #         Name: {contact_submission.name}
+    #         Email: {contact_submission.email}
+    #         Phone: {contact_submission.phone}
+    #         Message: {contact_submission.message}
             
-            Submitted at: {contact_submission.created_at}
-            IP Address: {contact_submission.ip_address}
-            """
+    #         Submitted at: {contact_submission.created_at}
+    #         IP Address: {contact_submission.ip_address}
+    #         """
             
-            send_mail(
-                subject,
-                message,
-                settings.DEFAULT_FROM_EMAIL,
-                [settings.ADMIN_EMAIL],
-                fail_silently=True,
-            )
-        except Exception as e:
-            # Log error but don't fail the request
-            print(f"Failed to send notification email: {e}")
+    #         send_mail(
+    #             subject,
+    #             message,
+    #             settings.DEFAULT_FROM_EMAIL,
+    #             [settings.ADMIN_EMAIL],
+    #             fail_silently=True,
+    #         )
+    #     except Exception as e:
+    #         # Log error but don't fail the request
+    #         print(f"Failed to send notification email: {e}")
 
 @api_view(['GET'])
 @permission_classes([AllowAny])
